@@ -1,10 +1,12 @@
-package com.processmap.myfirstdemoproject;
+package com.processmap.myfirstdemoproject.networking;
 
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.processmap.myfirstdemoproject.R;
 
 public class SecondActivity extends AppCompatActivity {
 
