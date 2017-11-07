@@ -1,4 +1,4 @@
-package com.processmap.myfirstdemoproject.AsyncTaskExample;
+package com.processmap.myfirstdemoproject.AsyncTask;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -80,13 +80,13 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
                         Log.e("PlaceholderFragment", "Error closing stream", e);
                     }
                 }
+                return  forecastJsonStr;
             }
 
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-
-        return null;
     }
 
     private void parseJson(String forecastJsonStr) {
@@ -96,6 +96,8 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
+
+        Log.i("onPostExecute: " , s);
 
 
     }
