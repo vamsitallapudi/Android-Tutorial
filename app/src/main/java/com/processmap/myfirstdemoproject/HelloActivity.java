@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
+import com.processmap.myfirstdemoproject.AsyncTaskExample.MyAsyncTask;
+
 public class HelloActivity extends AppCompatActivity{
 
     private ProgressBar mProgressBar;
@@ -16,7 +18,6 @@ public class HelloActivity extends AppCompatActivity{
         setContentView(R.layout.activity_hello);
         mProgressBar = findViewById(R.id.progressBar);
         new MyAsyncTask().execute("");
-
     }
 
 }
