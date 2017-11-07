@@ -6,7 +6,6 @@ package com.processmap.myfirstdemoproject.RecyclerAdapter;
  */
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +17,7 @@ import com.bumptech.glide.Glide;
 import com.processmap.myfirstdemoproject.R;
 import com.processmap.myfirstdemoproject.models.News;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * Created by vamsi on 06-May-16 for android recyclerview and cardview tutorial

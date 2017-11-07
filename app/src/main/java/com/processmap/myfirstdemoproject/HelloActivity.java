@@ -86,13 +86,12 @@ public class HelloActivity extends AppCompatActivity {
                     }
                     forecastJsonStr = buffer.toString();
                     Log.i("Result: ", forecastJsonStr);
-                    publishProgress(forecastJsonStr);
                 } catch (IOException e) {
                     Log.e("PlaceholderFragment", "Error ", e);
                     // If the code didn't successfully get the weather data, there's no point in attemping
                     // to parse it.
                     return null;
-                } finally{
+                } finally {
                     if (urlConnection != null) {
                         urlConnection.disconnect();
                     }
@@ -112,13 +111,6 @@ public class HelloActivity extends AppCompatActivity {
             }
         }
 
-
-
-        @Override
-        protected void onProgressUpdate(String... values) {
-            super.onProgressUpdate(values);
-        }
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -130,20 +122,20 @@ public class HelloActivity extends AppCompatActivity {
 
     private ArrayList<News> parseJson(String s) {
 
-        ArrayList<News> arrayList = new ArrayList<>();
+        ArrayList<News> newsList = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(s);
             for(int i= 0; i< jsonArray.length();i++){
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 News news = new News(jsonObject);
-                arrayList.add(news);
+                newsList.add(news);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return arrayList;
+        return newsList;
     }
 
 }
