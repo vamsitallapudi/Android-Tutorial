@@ -1,4 +1,4 @@
-package com.processmap.myfirstdemoproject.RecyclerAdapter;
+package com.processmap.myfirstdemoproject.networking;
 
 
 /**
@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.processmap.myfirstdemoproject.R;
-import com.processmap.myfirstdemoproject.models.News;
 
 import java.util.List;
 

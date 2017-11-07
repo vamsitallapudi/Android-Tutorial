@@ -1,4 +1,4 @@
-package com.processmap.myfirstdemoproject.models;
+package com.processmap.myfirstdemoproject.networking;
 
 import org.json.JSONException;
 import org.json.JSONObject;

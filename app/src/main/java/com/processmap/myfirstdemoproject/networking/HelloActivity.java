@@ -1,4 +1,4 @@
-package com.processmap.myfirstdemoproject;
+package com.processmap.myfirstdemoproject.networking;
 
 
 import android.os.AsyncTask;
@@ -8,8 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.processmap.myfirstdemoproject.RecyclerAdapter.NewsAdapter;
-import com.processmap.myfirstdemoproject.models.News;
+import com.processmap.myfirstdemoproject.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
