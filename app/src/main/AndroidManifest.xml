@@ -16,10 +16,15 @@
         </activity>
         <activity android:name=".sqlite.ReadSQLActivity"/>
         <activity android:name=".networking.NewsListActivity">
+        </activity>
+        <activity android:name=".activitiesanditsapplications.activityandlifecycle.LifeCycleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".activitiesanditsapplications.activityandlifecycle.SecondLifeCycleActivity">
         </activity>
     </application>
 
