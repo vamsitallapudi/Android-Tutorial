@@ -1,14 +1,19 @@
 package com.processmap.myfirstdemoproject.networking;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.processmap.myfirstdemoproject.R;
+import com.processmap.myfirstdemoproject.sqlite.DatabaseHelper;
+import com.processmap.myfirstdemoproject.sqlite.ReadSQLActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,14 +28,16 @@ import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class HelloActivity extends AppCompatActivity {
+public class NewsListActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
+    private DatabaseHelper mDatabaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
+        mDatabaseHelper = new DatabaseHelper(this);
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         new MyAsyncTask().execute("");
@@ -115,7 +122,7 @@ public class HelloActivity extends AppCompatActivity {
             super.onPostExecute(s);
             Log.i("onPostExecute: " , s);
             ArrayList<News> newsList = parseJson(s);
-            mRecyclerView.setAdapter(new NewsAdapter(HelloActivity.this,newsList));
+            mRecyclerView.setAdapter(new NewsAdapter(NewsListActivity.this,newsList));
         }
     }
 
@@ -128,6 +135,8 @@ public class HelloActivity extends AppCompatActivity {
             for(int i= 0; i< jsonArray.length();i++){
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 News news = new News(jsonObject);
+                //inserting data to sqlite
+                mDatabaseHelper.insertData(news.getNews_title(),news.getNews_image_url());
                 newsList.add(news);
             }
         } catch (JSONException e) {
@@ -137,4 +146,22 @@ public class HelloActivity extends AppCompatActivity {
         return newsList;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_news_list_activity,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.item_next:
+                Intent i = new Intent(NewsListActivity.this, ReadSQLActivity.class);
+                startActivity(i);
+                break;
+        }
+        return true;
+
+    }
 }

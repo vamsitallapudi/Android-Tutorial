@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyFirstDemoProject</string>
     <string name="tv_text_string">Save</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -13,14 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activitiesanditsapplications.activityandlifecycle.DemoActivity">
+        </activity>
+        <activity android:name=".sqlite.ReadSQLActivity"/>
+        <activity android:name=".networking.NewsListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".networking.SecondActivity"/>
-        <activity android:name=".networking.HelloActivity">
         </activity>
     </application>
 
