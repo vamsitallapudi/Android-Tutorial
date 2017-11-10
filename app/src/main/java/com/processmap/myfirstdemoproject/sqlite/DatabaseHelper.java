@@ -52,4 +52,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         return sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
     }
+
+    public boolean updateData(int id, String news_title, String news_image_url) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_NEWS_TITLE, news_title);
+        contentValues.put(COLUMN_IMAGE_URL, news_image_url);
+        sqLiteDatabase.update(TABLE_NAME, contentValues,COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        return true;
+    }
 }
