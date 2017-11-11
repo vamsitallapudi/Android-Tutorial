@@ -61,4 +61,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.update(TABLE_NAME, contentValues,COLUMN_ID + "=?", new String[]{String.valueOf(id)});
         return true;
     }
+    public boolean deleteData(int id) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.delete(TABLE_NAME,COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        return true;
+    }
 }
