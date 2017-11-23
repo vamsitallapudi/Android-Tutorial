@@ -18,13 +18,17 @@
         <activity android:name=".networking.NewsListActivity">
         </activity>
         <activity android:name=".activitiesanditsapplications.activityandlifecycle.LifeCycleActivity">
+        </activity>
+        <activity android:name=".activitiesanditsapplications.activityandlifecycle.SecondLifeCycleActivity">
+        </activity>
+        <activity android:name=".activitiesanditsapplications.switchingactivities.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activitiesanditsapplications.activityandlifecycle.SecondLifeCycleActivity">
+        <activity android:name=".activitiesanditsapplications.switchingactivities.SecondActivity">
         </activity>
     </application>
 
